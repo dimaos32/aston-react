@@ -17,5 +17,22 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "no-console": "warn",
+    "import/prefer-default-export": "off",
+    "react/jsx-no-useless-fragment": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "no-unused-expressions": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "arrow-body-style": ["error", "as-needed"],
   },
 };
