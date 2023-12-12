@@ -1,0 +1,26 @@
+@import "../../variables";
+
+.header {
+  padding: 20px 0;
+
+  border-bottom: 1px solid $site-color-1;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px 50px;
+}
+
+.logo {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.pic {
+  width: 55px;
+  height: 64px;
+
+  object-fit: contain;
+}
