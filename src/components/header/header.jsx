@@ -1,8 +1,8 @@
 import styles from './header.module.scss';
 
-import Container from '../container/container.jsx';
-import Logo from '../logo/logo.jsx';
-import Nav from '../nav/nav.jsx';
+import Container from '../container/container';
+import Logo from '../logo/logo';
+import Nav from '../nav/nav';
 
 export default function Header() {
 
