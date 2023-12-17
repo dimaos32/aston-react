@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  gap: 2px;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .input {
+    border-radius: 6px 0 0 6px;
+  }
+
+  .button {
+    border-radius: 0 6px 6px 0;
+  }
+}

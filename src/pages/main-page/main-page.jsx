@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Header from "../../components/header/header";
+import SearchBar from "../../components/search-bar/search-bar";
 import RandomCocktail from '../../components/random-cocktail/random-cocktail'
 
 export default function MainPage() {
@@ -22,6 +23,7 @@ export default function MainPage() {
   return (
     <>
       <Header />
+      <SearchBar />
       <RandomCocktail cocktail={cocktail} />
     </>
   );

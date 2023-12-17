@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.input {
+  width: 100%;
+  padding: 6px 14px;
+
+  font: inherit;
+  font-weight: 700;
+  color: $site-color-4;
+
+  background-color: $site-color-1;
+  border: 2px solid $site-color-1;
+  border-radius: 6px;
+  outline: 2px solid $site-color-2;
+  outline-offset: -4px;
+
+  transition: outline-color $trans-default;
+
+  &:hover,
+  &:focus {
+    outline-color: $site-color-3;
+  }
+}
