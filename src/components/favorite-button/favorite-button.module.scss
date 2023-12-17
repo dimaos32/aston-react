@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  color: $color-transparent;
+
+  background-color: $color-transparent;
+  border: none;
+
+  cursor: pointer;
+
+  transition: color $trans-default;
+
+  &.favorite {
+    color: $accent-color;
+  }
+
+  path {
+    transition: stroke $trans-default;
+  }
+
+  &:hover,
+  &:focus {
+    path {
+      stroke: $accent-color-hover
+    }
+
+    &.favorite {
+      color: $accent-color-hover;
+    }
+  }
+}
