@@ -21,8 +21,9 @@
 
   transition: box-shadow $trans-default;
 
-  &:hover,
-  &:focus {
+  .card:hover &,
+  &:focus,
+  .card:focus-within & {
     color: $site-color-4;
 
     box-shadow: 0 0 16px 0 $site-color-1;
@@ -93,29 +94,5 @@
 
   &:not(:last-child) {
     margin-bottom: 16px;
-  }
-}
-
-.btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-
-  color: $color-transparent;
-
-  background-color: $color-transparent;
-  border: none;
-
-  cursor: pointer;
-
-  &.favorite {
-    color: $accent-color;
   }
 }

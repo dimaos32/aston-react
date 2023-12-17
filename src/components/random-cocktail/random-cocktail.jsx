@@ -1,8 +1,7 @@
+import styles from "./random-cocktail.module.scss"
 import Container from '../container/container';
 import CocktailCard from '../cocktail-card/cocktail-card';
 import Loader from '../loader/loader';
-import styles from "./random-cocktail.module.scss"
-
 
 export default function RandomCocktail({ cocktail }) {
   let content;
