@@ -1,3 +1,29 @@
+@import "../../mixins.scss";
+
 .section {
   margin: 60px 0;
+}
+
+.title {
+  max-width: 600px;
+  margin: 0 auto;
+
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.list {
+  @include clear-list;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+  gap:30px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
 }
