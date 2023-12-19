@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import styles from "./cocktail-card.module.scss";
+import Tags from '../tags/tags';
 import FavoriteButton from '../favorite-button/favorite-button';
 
 export default function CocktailCard({ cocktail }) {
@@ -10,14 +11,6 @@ export default function CocktailCard({ cocktail }) {
   const handleIsFavoriteClick = () => {
     setIsFavorite(f => !f);
     console.log(isFavorite ? 'Удаляет из избранного' : 'Добавляет в избранное');
-  };
-
-  function Tags({ tags }) {
-    return (
-      <ul className={styles.tags}>
-        {tags.map(item => <li className={styles.tag} key={item}>{item}</li>)}
-      </ul>
-    );
   };
 
   return (

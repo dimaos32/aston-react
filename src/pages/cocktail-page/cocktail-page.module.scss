@@ -1,3 +1,149 @@
+@import "../../variables";
+@import "../../mixins";
+
 .section {
   margin: 60px 0;
+}
+
+.card {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  color: $site-color-4;
+
+  background-color: $site-color-1;
+  border: 2px solid $site-color-3;
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.cover {
+  position: relative;
+
+  width: 100%;
+  padding-top: 100%;
+
+  background-color: $site-color-3;
+
+  @include vp-767 {
+    margin-bottom: 16px;
+  }
+}
+
+.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.content {
+  padding: 32px;
+
+  @include vp-1023 {
+    padding: 24px;
+  }
+}
+
+.category {
+  margin: 0;
+  text-align: right;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.title {
+  margin: 0;
+
+  font-size: 32px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.ingredients {
+  @include clear-list;
+
+  font-size: 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.ingredient {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.ingredient_cover {
+  $pic-size: 60px;
+
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: relative;
+
+  width: $pic-size;
+  height: $pic-size;
+  margin-right: 12px;
+  padding-top: $pic-size;
+}
+
+.ingredient_pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.ingredient_title {
+  margin: 0;
+
+  font-weight: 700;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+
+.ingredient_quantity {
+  margin: 0;
+
+  font-style: italic;
+}
+
+.instructions {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 32px;
+
+  font-weight: 700;
+  font-size: 24px;
+
+  @include vp-767 {
+    padding: 24px;
+    padding-top: 8px;
+  }
 }

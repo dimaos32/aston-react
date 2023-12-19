@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import cn from 'classnames';
 
 import styles from './nav.module.scss';
@@ -7,11 +9,29 @@ export default function Nav({ classes }) {
     <nav className={cn(styles.nav, classes)}>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <a  href="/favorites">Favorites</a></li>
+          <NavLink
+            to="/favorites"
+            className={({ isActive }) => isActive
+              ? styles.is_active
+              : undefined}
+            >Favorites</NavLink>
+        </li>
         <li className={styles.item}>
-          <a  href="/history">History</a></li>
+          <NavLink
+            to="/history"
+            className={({ isActive }) => isActive
+              ? styles.is_active
+              : undefined}
+          >History</NavLink>
+        </li>
         <li className={styles.item}>
-          <a  href="/signout">Sign out</a></li>
+          <NavLink
+            to="/signout"
+            className={({ isActive }) => isActive
+              ? styles.is_active
+              : undefined}
+          >Sign out</NavLink>
+        </li>
       </ul>
     </nav>
   );

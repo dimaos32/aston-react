@@ -1,0 +1,45 @@
+@import "../../variables";
+@import "../../mixins";
+
+.tags {
+  @include clear-list;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+
+  font-weight: 700;
+  font-size: 10px;
+
+  color: $site-color-2;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.tag {
+  padding: 3px 6px 1px;
+  background-color: $site-color-4;
+  border-radius: 6px;
+}
+
+.category {
+  margin: 0;
+  text-align: right;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.title {
+  margin: 0;
+
+  font-size: 32px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
