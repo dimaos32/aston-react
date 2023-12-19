@@ -1,0 +1,28 @@
+.section {
+  margin: 80px 0;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.code {
+  margin: 0;
+  font-weight: 700;
+  font-size: 144px;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.message {
+  margin: 0;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
