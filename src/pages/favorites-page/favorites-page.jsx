@@ -1,15 +1,14 @@
-import styles from "./search-bar.module.scss"
-import SearchForm from '../search-form/search-form';
+import styles from './favorites-page.module.scss'
 
-export default function SearchBar() {
+export default function FavoritesPage() {
 
   return (
     <section className={styles.section}>
       <div className="container">
         <div className={styles.inner}>
-          <SearchForm />
+          <h1>Favorites page</h1>
         </div>
       </div>
     </section>
   );
-};
+}

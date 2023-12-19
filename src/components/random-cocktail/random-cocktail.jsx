@@ -1,5 +1,4 @@
 import styles from "./random-cocktail.module.scss"
-import Container from '../container/container';
 import Loader from '../loader/loader';
 import CocktailCard from '../cocktail-card/cocktail-card';
 
@@ -19,9 +18,9 @@ export default function RandomCocktail({ cocktail }) {
 
   return (
     <section className={styles.section}>
-      <Container>
+      <div className="container">
         {cocktail ? content : <Loader />}
-      </Container>
+      </div>
     </section>
   );
 };
