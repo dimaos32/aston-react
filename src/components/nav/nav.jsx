@@ -11,25 +11,19 @@ export default function Nav({ classes }) {
         <li className={styles.item}>
           <NavLink
             to="/favorites"
-            className={({ isActive }) => isActive
-              ? styles.is_active
-              : undefined}
+            className={({isActive}) => isActive ? styles.is_active : ""}
             >Favorites</NavLink>
         </li>
         <li className={styles.item}>
           <NavLink
             to="/history"
-            className={({ isActive }) => isActive
-              ? styles.is_active
-              : undefined}
+            className={({isActive}) => isActive ? styles.is_active : ""}
           >History</NavLink>
         </li>
         <li className={styles.item}>
           <NavLink
             to="/signout"
-            className={({ isActive }) => isActive
-              ? styles.is_active
-              : undefined}
+            className={({isActive}) => isActive ? styles.is_active : ""}
           >Sign out</NavLink>
         </li>
       </ul>
