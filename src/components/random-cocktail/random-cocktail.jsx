@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { ACCESS_URL } from '../../utils/constants';
+import { adaptServerDataToCocktailCard } from '../../utils/adapters';
 
 import styles from "./random-cocktail.module.scss"
 import Loader from '../loader/loader';
@@ -25,7 +26,7 @@ export default function RandomCocktail() {
     fetch(`${ACCESS_URL}/random.php`)
       .then(res => res.json())
       .then(data => {
-        setCocktail(data.drinks[0]);
+        setCocktail(adaptServerDataToCocktailCard(data.drinks[0]));
       });
   }, []);
 

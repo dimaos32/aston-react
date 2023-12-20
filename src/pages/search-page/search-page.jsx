@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { ACCESS_URL } from '../../utils/constants';
+import { adaptServerDataToCocktailCard } from '../../utils/adapters';
 
 import styles from './search-page.module.scss'
 import SearchBar from '../../components/search-bar/search-bar'
@@ -10,14 +11,13 @@ import CocktailCard from '../../components/cocktail-card/cocktail-card';
 
 function Results({ cocktails }) {
 
-
   return (
     cocktails
       ? <>
           <h1 className={styles.title}>Search results</h1>
           <ul className={styles.list}>
             {cocktails.map(item => (
-              <li key={item.idDrink}  className={styles.item}>
+              <li key={item.id}  className={styles.item}>
                 <CocktailCard cocktail={item} />
               </li>
             ))}
@@ -38,7 +38,10 @@ export default function SearchPage() {
     fetch(`${ACCESS_URL}/search.php${location.search}`)
       .then(res => res.json())
       .then(data => {
-        setCocktails(data.drinks);
+        setCocktails(data.drinks
+          ? data.drinks.map(adaptServerDataToCocktailCard)
+          : null
+        );
         setIsResponseReceived(true);
       });
   }, [location]);
