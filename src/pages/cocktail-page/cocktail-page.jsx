@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ACCESS_URL, IMAGES_INGREDIENTS_URL } from '../../utils/constants';
-import { adaptServerDataToCocatalPage } from '../../utils/adapters';
+import { adaptServerDataToCocktailPage } from '../../utils/adapters';
 
 import styles from './cocktail-page.module.scss';
 import Loader from '../../components/loader/loader';
@@ -15,7 +15,7 @@ function Ingredients({ ingredients }) {
     <ul className={styles.ingredients}>
       {ingredients.map(([ingredient, quantity]) => {
         return (
-          <li key={ingredient} className={styles.ingredient}>
+          <li key={`${ingredient}${quantity}`} className={styles.ingredient}>
             <div className={styles.ingredient_cover}>
               <img
                 className={styles.ingredient_pic}
@@ -91,7 +91,7 @@ export default function CocktailPage() {
     fetch(`${ACCESS_URL}/lookup.php?i=${cocktailId}`)
       .then(res => res.json())
       .then(data => {
-        setCocktail(adaptServerDataToCocatalPage(data.drinks[0]));
+        setCocktail(adaptServerDataToCocktailPage(data.drinks[0]));
       });
   }, []);
 

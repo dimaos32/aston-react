@@ -1,4 +1,4 @@
-const adaptServerDataToCocatalPage = ({
+const adaptServerDataToCocktailPage = ({
   strCategory,
   idDrink,
   strDrink,
@@ -65,4 +65,20 @@ const adaptServerDataToCocatalPage = ({
   };
 };
 
-export { adaptServerDataToCocatalPage };
+const adaptServerDataToCocktailCard = ({
+  idDrink,
+  strDrinkThumb,
+  strTags,
+  strCategory,
+  strDrink
+}) => {
+  return {
+    id: idDrink,
+    drink: strDrink,
+    thumb: strDrinkThumb,
+    tags: strTags ? strTags.split(',') : null,
+    category: strCategory,
+  };
+};
+
+export { adaptServerDataToCocktailPage, adaptServerDataToCocktailCard };

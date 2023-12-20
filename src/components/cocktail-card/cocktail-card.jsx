@@ -6,7 +6,7 @@ import FavoriteButton from '../favorite-button/favorite-button';
 
 export default function CocktailCard({ cocktail }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const { idDrink, strDrinkThumb, strTags, strCategory, strDrink } = cocktail;
+  const { id, thumb, tags, category, drink } = cocktail;
 
   const handleIsFavoriteClick = () => {
     setIsFavorite(f => !f);
@@ -15,25 +15,25 @@ export default function CocktailCard({ cocktail }) {
 
   return (
     <article className={styles.card}>
-      <a className={styles.link} href={`/cocktails/${idDrink}`}>
+      <a className={styles.link} href={`/cocktails/${id}`}>
         <div className={styles.cover}>
           <img
             className={styles.pic}
-            src={strDrinkThumb}
+            src={thumb}
             width="700"
             height="700"
-            alt={strDrink}
+            alt={drink}
           />
         </div>
         <div className={styles.content}>
-          {strTags && <Tags tags={strTags.split(',')} />}
-          <p className={styles.category}>{strCategory}</p>
-          <h2 className={styles.title}>{strDrink}</h2>
+          {tags && <Tags tags={tags} />}
+          <p className={styles.category}>{category}</p>
+          <h2 className={styles.title}>{drink}</h2>
         </div>
       </a>
       <FavoriteButton
         isFavorite={isFavorite}
-        clickHandler={() => handleIsFavoriteClick(idDrink)}
+        clickHandler={() => handleIsFavoriteClick(id)}
       />
     </article>
   );
